@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias -- -="cd -"
-
 # Detect which `ls` flavor is in use
 # Original version from Matthias Bynen's dotfiles doesn't work on my Mac.
 # "ls --color > /dev/null 2>&1;" then returns true after brew install coreutils.
@@ -110,3 +103,20 @@ alias gulp='npx gulp'
 
 # Check opened TCP Ports
 alias openedports="sudo netstat -plunt"
+
+
+alias dkcu='docker-compose up'
+alias dkcd='docker-compose down'
+alias dkcb='docker-compose build'
+alias gl="git log --all --decorate --oneline --graph"
+alias glc="git log --decorate --oneline --graph"
+alias yarn-linked="find . -type l | grep -v .bin | sed 's/^\.\/node_modules\///'"
+alias yarn-unlink-all="yarn-linked | xargs yarn unlink && yarn install --check-files"
+alias gsquash="git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
+
+# mnet-servers
+alias neo-logs="lnav -r adc-2:/var/www/php7control.neo.tech/storage/logs/**/*.log adc-1:/var/www/php7control.neo.tech/storage/logs/**/*.log"
+alias hb-admin-logs="lnav 172.20.10.221:/var/www/php7hb.internal.reports.mn/storage/logs/error 172.20.10.221:/var/www/php7hb.internal.reports.mn/storage/logs/app"
+alias aax-logs="lnav 172.20.10.221:/var/www/php7pub.aax.media/storage/logs/error 172.20.10.221:/var/www/php7pub.aax.media/storage/logs/app"
+alias aax-admin-logs="lnav 172.20.10.221:/var/www/php7aax.reports.mn/storage/logs/error 172.20.10.221:/var/www/php7aax.reports.mn/storage/logs/app"
+alias access-hb-admin-logs="lnav 172.20.10.221:/var/www/php7hb.access.mn/storage/logs/error 172.20.10.221:/var/www/php7aax.reports.mn/storage/logs/app"
